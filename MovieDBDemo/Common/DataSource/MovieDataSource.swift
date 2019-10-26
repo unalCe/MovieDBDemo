@@ -64,29 +64,23 @@ extension MovieDataSource: UICollectionViewDelegate, UICollectionViewDataSource 
 extension MovieDataSource: UICollectionViewDelegateFlowLayout {
     
     private func calculateCellSize(for contentType: ContentType, list: ListType, in collectionView: UICollectionView) -> CGSize {
-        
         switch listType {
         case .TopRated:
-            return CGSize(width: collectionView.bounds.width * 0.9, height: collectionView.bounds.height - 16)
+            return CGSize(width: collectionView.bounds.width * 0.865, height: collectionView.bounds.height - CellProperties.VerticalInsets)
         case .NowPlaying:
-            return CGSize(width: collectionView.bounds.width * 0.42, height: collectionView.bounds.height - 16)
+            return CGSize(width: collectionView.bounds.width * 0.42, height: collectionView.bounds.height - CellProperties.VerticalInsets)
         case .Popular:
-            // Left and right content insets are both 20 - 20  & 12 cell spacing => 52
-            let width = (collectionView.bounds.width - 52) / 2
-            return CGSize(width: width, height: width * 3 / 2)
+            let width = (collectionView.bounds.width - (CellProperties.HorizontalInsets + ((CellProperties.NumberOfColumnsInGrid - 1) * CellProperties.HorizontalSpaceBetweenItems))) / CellProperties.NumberOfColumnsInGrid
+            return CGSize(width: width, height: width * CellProperties.PosterImageRatio)
         }
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        //let width = (collectionView.bounds.width / 2) - 40
-        //return CGSize(width: width, height: width * 3 / 2)
-        
         return calculateCellSize(for: .Movie, list: listType, in: collectionView)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 12
+        return CellProperties.HorizontalSpaceBetweenItems
     }
 }
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		904668D42363886E00EBE3F1 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904668D32363886E00EBE3F1 /* UIExtensions.swift */; };
+		90934D07236483140063508E /* CellSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90934D06236483140063508E /* CellSize.swift */; };
 		90C7F22E236301C2009FB147 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C7F22D236301C2009FB147 /* AppDelegate.swift */; };
 		90C7F230236301C2009FB147 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C7F22F236301C2009FB147 /* MovieDetailViewController.swift */; };
 		90C7F233236301C2009FB147 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90C7F231236301C2009FB147 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		904668D32363886E00EBE3F1 /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
+		90934D06236483140063508E /* CellSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellSize.swift; sourceTree = "<group>"; };
 		90C7F22A236301C2009FB147 /* MovieDBDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieDBDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90C7F22D236301C2009FB147 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90C7F22F236301C2009FB147 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				90F6B15823636322008F6509 /* CellIdentifiers.swift */,
+				90934D06236483140063508E /* CellSize.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				90C7F22E236301C2009FB147 /* AppDelegate.swift in Sources */,
 				90F6B154236360CA008F6509 /* Movie.swift in Sources */,
 				90F6B149236344FF008F6509 /* NowPlayingCollectionViewCell.swift in Sources */,
+				90934D07236483140063508E /* CellSize.swift in Sources */,
 				90F6B15923636322008F6509 /* CellIdentifiers.swift in Sources */,
 				904668D42363886E00EBE3F1 /* UIExtensions.swift in Sources */,
 				90F6B14F23634692008F6509 /* MovieDataSource.swift in Sources */,

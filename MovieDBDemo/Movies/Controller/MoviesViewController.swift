@@ -22,26 +22,19 @@ class MoviesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
-        
-        topRatedCollectionView.dataSource = topRatedDataSource
-        topRatedCollectionView.delegate = topRatedDataSource
-        topRatedCollectionView.layer.masksToBounds = false
-        
-      //  topRatedCollectionView.delegate = self
-      //  topRatedCollectionView.dataSource = self
-        
-        
-        popularCollectionView.dataSource = popularDataSource
-        popularCollectionView.delegate = popularDataSource
-        popularCollectionView.layer.masksToBounds = false
-        
-        nowPlayingCollectionView.dataSource = nowPlayingDataSource
-        nowPlayingCollectionView.delegate = nowPlayingDataSource
-        nowPlayingCollectionView.layer.masksToBounds = false
-        
-        let scaledHeight = popularCollectionView.collectionViewLayout.collectionViewContentSize.height
-        popularCollectionViewHeightConstraint.constant = scaledHeight
-        view.setNeedsLayout()
+
+        setup(collectionView: topRatedCollectionView, dataSource: topRatedDataSource)
+        setup(collectionView: nowPlayingCollectionView, dataSource: nowPlayingDataSource)
+        setup(collectionView: popularCollectionView, dataSource: popularDataSource)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        popularCollectionViewHeightConstraint.constant = popularCollectionView.collectionViewLayout.collectionViewContentSize.height
+    }
+    
+    private func setup(collectionView: UICollectionView, dataSource: MovieDataSource) {
+        collectionView.dataSource = dataSource
+        collectionView.delegate = dataSource
+        collectionView.layer.masksToBounds = false
     }
 }
