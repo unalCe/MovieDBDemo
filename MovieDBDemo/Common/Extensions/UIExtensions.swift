@@ -12,12 +12,12 @@ import UIKit
 extension UICollectionViewCell {
     
     func setupDefaultCellLook() {
-        self.layer.cornerRadius = 8
-        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: 8).cgPath
+        self.layer.cornerRadius = CellProperties.cornerRadius
+        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: CellProperties.cornerRadius).cgPath
         self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowOffset = CGSize(width: 0, height: 5)
-        self.layer.shadowRadius = 6
-        self.layer.shadowOpacity = 0.3
+        self.layer.shadowOffset = CellProperties.shadowOffset
+        self.layer.shadowRadius = CellProperties.shadowRadius
+        self.layer.shadowOpacity = CellProperties.shadowOpacity
         self.layer.masksToBounds = false
     }
 }

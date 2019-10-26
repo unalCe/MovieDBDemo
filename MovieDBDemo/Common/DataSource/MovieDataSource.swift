@@ -66,12 +66,12 @@ extension MovieDataSource: UICollectionViewDelegateFlowLayout {
     private func calculateCellSize(for contentType: ContentType, list: ListType, in collectionView: UICollectionView) -> CGSize {
         switch listType {
         case .TopRated:
-            return CGSize(width: collectionView.bounds.width * 0.865, height: collectionView.bounds.height - CellProperties.VerticalInsets)
+            return CGSize(width: collectionView.bounds.width * 0.865, height: collectionView.bounds.height - CollectionViewProperties.VerticalInsets)
         case .NowPlaying:
-            return CGSize(width: collectionView.bounds.width * 0.42, height: collectionView.bounds.height - CellProperties.VerticalInsets)
+            return CGSize(width: collectionView.bounds.width * 0.42, height: collectionView.bounds.height - CollectionViewProperties.VerticalInsets)
         case .Popular:
-            let width = (collectionView.bounds.width - (CellProperties.HorizontalInsets + ((CellProperties.NumberOfColumnsInGrid - 1) * CellProperties.HorizontalSpaceBetweenItems))) / CellProperties.NumberOfColumnsInGrid
-            return CGSize(width: width, height: width * CellProperties.PosterImageRatio)
+            let width = (collectionView.bounds.width - (CollectionViewProperties.HorizontalInsets + ((CollectionViewProperties.NumberOfColumnsInGrid - 1) * CollectionViewProperties.HorizontalSpaceBetweenItems))) / CollectionViewProperties.NumberOfColumnsInGrid
+            return CGSize(width: width, height: width * CollectionViewProperties.PosterImageRatio)
         }
     }
     
@@ -80,7 +80,7 @@ extension MovieDataSource: UICollectionViewDelegateFlowLayout {
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return CellProperties.HorizontalSpaceBetweenItems
+        return CollectionViewProperties.HorizontalSpaceBetweenItems
     }
 }
 
