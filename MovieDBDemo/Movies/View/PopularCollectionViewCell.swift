@@ -13,6 +13,9 @@ class PopularCollectionViewCell: BaseMovieCollectionViewCell {
     override func awakeFromNib() {
         backgroundColor = .orange
         
-        print(movie?.title)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
     }
 }

@@ -60,7 +60,6 @@ extension MovieDataSource: UICollectionViewDelegate, UICollectionViewDataSource 
         }
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let movie = movies[indexPath.row]
         didSelectItemHandler?(movie)

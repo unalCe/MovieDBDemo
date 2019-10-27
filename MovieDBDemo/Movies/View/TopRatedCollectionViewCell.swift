@@ -12,7 +12,5 @@ class TopRatedCollectionViewCell: BaseMovieCollectionViewCell {
     
     override func awakeFromNib() {
         backgroundColor = .blue
-        
-        print(movie?.title)
     }
 }
