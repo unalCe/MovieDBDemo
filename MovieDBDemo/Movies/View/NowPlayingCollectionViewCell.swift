@@ -8,14 +8,25 @@
 
 import UIKit
 
-class NowPlayingCollectionViewCell: UICollectionViewCell {
+class NowPlayingCollectionViewCell: BaseMovieCollectionViewCell {
+    
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func awakeFromNib() {
-        backgroundColor = .red
-        
+        backgroundColor = .orange
     }
     
     override func layoutSubviews() {
-        setupDefaultCellLook()
+        super.layoutSubviews()
+        
+        titleLabel.text = movie?.title
     }
+    
+//    override func layoutSubviews() {
+//        setupDefaultCellLook()
+//    }
+    
+//    private func setupCell(with movie: Movie) {
+//        print("\(movie.title)")
+//    }
 }

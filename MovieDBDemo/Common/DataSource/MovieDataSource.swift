@@ -28,36 +28,42 @@ class MovieDataSource: NSObject {
     var content: ContentType
     var listType: ListType
     
-    init(content: ContentType, listType: ListType) {
+    init(movies: [Movie], content: ContentType, listType: ListType, didSelectItemHandler: @escaping MovieSelectHandler) {
+        self.movies = movies
         self.content = content
         self.listType = listType
+        self.didSelectItemHandler = didSelectItemHandler
     }
 }
 
 extension MovieDataSource: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return movies.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-      //  var cell = collectionView.dequeueReusableCell(withReuseIdentifier: listType.rawValue, for: indexPath)
-         let cell = getCustomCellClass(for: collectionView, reuseIdentifier: listType.rawValue, indexPath: indexPath)
-        
-        // cell.viewModel --> configure
-        
-        return cell
+        switch listType {
+        case .TopRated:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: listType.rawValue, for: indexPath) as! TopRatedCollectionViewCell
+            cell.movie = movies[indexPath.row]
+            return cell
+        case .NowPlaying:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: listType.rawValue, for: indexPath) as! NowPlayingCollectionViewCell
+            cell.movie = movies[indexPath.row]
+            return cell
+        case .Popular:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: listType.rawValue, for: indexPath) as! PopularCollectionViewCell
+            cell.movie = movies[indexPath.row]
+            return cell
+        }
     }
     
-    private func getCustomCellClass(for collectionView: UICollectionView, reuseIdentifier: String, indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-        
-        switch listType {
-        case .TopRated: return cell as! TopRatedCollectionViewCell
-        case .NowPlaying: return cell as! NowPlayingCollectionViewCell
-        case .Popular: return cell as! PopularCollectionViewCell
-        }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let movie = movies[indexPath.row]
+        didSelectItemHandler?(movie)
     }
 }
 

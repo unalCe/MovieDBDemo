@@ -8,14 +8,11 @@
 
 import UIKit
 
-class TopRatedCollectionViewCell: UICollectionViewCell {
+class TopRatedCollectionViewCell: BaseMovieCollectionViewCell {
     
     override func awakeFromNib() {
         backgroundColor = .blue
         
-    }
-    
-    override func layoutSubviews() {
-        setupDefaultCellLook()
+        print(movie?.title)
     }
 }

@@ -17,8 +17,7 @@ protocol MovieProtocol: Codable {
 
 extension MovieProtocol {
     func getPosterUrl() -> String {
-        // return "\(AppConstants.API.BaseImagePath)\(posterPath)"
-        return "hehe"
+        return "\(MovieDBBaseAPI.BaseImagePath)\(posterPath)"
     }
 }
 
