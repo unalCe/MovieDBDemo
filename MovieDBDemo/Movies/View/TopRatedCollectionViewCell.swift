@@ -10,7 +10,14 @@ import UIKit
 
 class TopRatedCollectionViewCell: BaseMovieCollectionViewCell {
     
-    override func awakeFromNib() {
-        backgroundColor = .blue
+    @IBOutlet weak var backImageView: UIImageView!
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        addShadow()
+        
+        backImageView.image = backImage
+        backImageView.layer.cornerRadius = CellProperties.cornerRadius
     }
 }

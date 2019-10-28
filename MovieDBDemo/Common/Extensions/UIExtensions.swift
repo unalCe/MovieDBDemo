@@ -9,11 +9,13 @@
 import UIKit
 
 
-extension UICollectionViewCell {
+extension UIView {
     
-    func setupDefaultCellLook() {
+    func addShadow(forText: Bool = false) {
         self.layer.cornerRadius = CellProperties.cornerRadius
-        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: CellProperties.cornerRadius).cgPath
+        if !forText {
+            self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: CellProperties.cornerRadius).cgPath
+        }
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOffset = CellProperties.shadowOffset
         self.layer.shadowRadius = CellProperties.shadowRadius

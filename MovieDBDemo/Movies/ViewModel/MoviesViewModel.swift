@@ -23,8 +23,8 @@ class MoviesViewModel {
         self.listType = listType
     }
     
-    func getDataSource(didSelectItemHandler: @escaping MovieDataSource.MovieSelectHandler) -> MovieDataSource {
-        return MovieDataSource(movies: movies, content: contentType, listType: listType, didSelectItemHandler: didSelectItemHandler)
+    func getDataSource(didSelectItemHandler: @escaping MovieDataSourceDelegate.MovieSelectHandler) -> MovieDataSourceDelegate {
+        return MovieDataSourceDelegate(movies: movies, content: contentType, listType: listType, didSelectItemHandler: didSelectItemHandler)
     }
     
     func getMovies(completion: @escaping () -> Void) {

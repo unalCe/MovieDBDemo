@@ -10,23 +10,24 @@ import UIKit
 
 class NowPlayingCollectionViewCell: BaseMovieCollectionViewCell {
     
+    @IBOutlet weak var posterImageView: UIImageView!
+    @IBOutlet weak var shadowView: UIView!
+    
     @IBOutlet weak var titleLabel: UILabel!
     
     override func awakeFromNib() {
-        backgroundColor = .orange
+        layer.masksToBounds = false
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        titleLabel.text = movie?.title
+        titleLabel.text = movie?.title.uppercased()
+        
+        titleLabel.addShadow(forText: true)
+        shadowView.addShadow()
+        
+        posterImageView.image = backImage
+        posterImageView.layer.cornerRadius = CellProperties.cornerRadius
     }
-    
-//    override func layoutSubviews() {
-//        setupDefaultCellLook()
-//    }
-    
-//    private func setupCell(with movie: Movie) {
-//        print("\(movie.title)")
-//    }
 }

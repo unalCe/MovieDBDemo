@@ -13,11 +13,17 @@ protocol MovieProtocol: Codable {
     var title: String { get set }
     var overview: String { get set }
     var posterPath: String { get set }
+    var voteAverage: Double { get set }
+    var backDropPath: String { get set }
 }
 
 extension MovieProtocol {
     func getPosterUrl() -> String {
         return "\(MovieDBBaseAPI.BaseImagePath)\(posterPath)"
+    }
+    
+    func getBackDropURL() -> String {
+        return "\(MovieDBBaseAPI.BaseImagePath)\(backDropPath)"
     }
 }
 
@@ -26,8 +32,10 @@ struct Movie: MovieProtocol {
     var title: String
     var overview: String
     var posterPath: String
+    var voteAverage: Double
+    var backDropPath: String
     
     private enum CodingKeys : String, CodingKey {
-        case movieId = "id", title, overview, posterPath = "poster_path"
+        case movieId = "id", title, overview, posterPath = "poster_path", voteAverage = "vote_average", backDropPath = "backdrop_path"
     }
 }

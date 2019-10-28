@@ -22,9 +22,9 @@ class MoviesViewController: UIViewController {
     var popularViewModel = MoviesViewModel(contentType: .Movie, listType: .Popular)
     let nowPlayingViewModel = MoviesViewModel(contentType: .Movie, listType: .NowPlaying)
     
-    var topRatedDataSource: MovieDataSource?
-    var popularDataSource: MovieDataSource?
-    var nowPlayingDataSource: MovieDataSource?
+    var topRatedDataSource: MovieDataSourceDelegate?
+    var popularDataSource: MovieDataSourceDelegate?
+    var nowPlayingDataSource: MovieDataSourceDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,10 +32,6 @@ class MoviesViewController: UIViewController {
         getMovies(for: topRatedCollectionView, with: topRatedViewModel)
         getMovies(for: popularCollectionView, with: popularViewModel)
         getMovies(for: nowPlayingCollectionView, with: nowPlayingViewModel)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-//        popularCollectionViewHeightConstraint.constant = popularCollectionView.collectionViewLayout.collectionViewContentSize.height
     }
     
     func reload(collectionView: UICollectionView, with viewModel: MoviesViewModel) {
@@ -61,27 +57,17 @@ class MoviesViewController: UIViewController {
         collectionView.reloadData()
     }
     
-//    private func getMovies() {
-//        nowPlayingViewModel.getMovies { [weak self] in
-//            DispatchQueue.main.async {
-//                self?.reloadData()
-//            }
-//        }
-//    }
-    
     private func getMovies(for collectionView: UICollectionView, with viewModel: MoviesViewModel) {
         viewModel.getMovies { [weak self] in
             DispatchQueue.main.async {
-              //  self?.setup(collectionView: collectionView, viewModel: viewModel)
                 self?.reload(collectionView: collectionView, with: viewModel)
             }
         }
     }
     
-    private func didSelectMovie() -> MovieDataSource.MovieSelectHandler {
+    private func didSelectMovie() -> MovieDataSourceDelegate.MovieSelectHandler {
         return { [weak self] (movie) in
             if let strongSelf = self {
-         //       strongSelf.delegate.showDetails(of: movie, from: strongSelf)
                 let vc = MovieDetailViewController()
                 vc.movie = movie
                 strongSelf.show(vc, sender: nil)
