@@ -14,6 +14,7 @@ protocol MovieProtocol: Codable {
     var overview: String { get set }
     var posterPath: String { get set }
     var voteAverage: Double { get set }
+    var releaseDate: String { get set }
     var backDropPath: String { get set }
 }
 
@@ -33,9 +34,10 @@ struct Movie: MovieProtocol {
     var overview: String
     var posterPath: String
     var voteAverage: Double
+    var releaseDate: String
     var backDropPath: String
     
     private enum CodingKeys : String, CodingKey {
-        case movieId = "id", title, overview, posterPath = "poster_path", voteAverage = "vote_average", backDropPath = "backdrop_path"
+        case movieId = "id", title, overview, posterPath = "poster_path", voteAverage = "vote_average", backDropPath = "backdrop_path", releaseDate = "release_date"
     }
 }

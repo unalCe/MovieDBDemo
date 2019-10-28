@@ -16,9 +16,15 @@ class PopularCollectionViewCell: BaseMovieCollectionViewCell {
     let voteLabel = UILabel()
     
     var voteGradient: CAGradientLayer!
+    var footerGradient: CAGradientLayer!
+    
+    @IBOutlet weak var footerGradientView: UIView!
+    @IBOutlet weak var yearLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func awakeFromNib() {
         setupVoteLabel()
+        setupFooter()
     }
     
     override func layoutSubviews() {
@@ -30,6 +36,7 @@ class PopularCollectionViewCell: BaseMovieCollectionViewCell {
         
         updateSubviews()
         updateVotes()
+        updateFooter()
     }
     
     private func setupVoteLabel() {
@@ -51,6 +58,17 @@ class PopularCollectionViewCell: BaseMovieCollectionViewCell {
         voteLabel.textAlignment = .center
     }
     
+    private func setupFooter() {
+        footerGradientView.backgroundColor = .clear
+        footerGradientView.layer.cornerRadius = CellProperties.cornerRadius
+        footerGradientView.clipsToBounds = true
+        
+        footerGradient = CAGradientLayer()
+        footerGradient.colors = [UIColor.clear.cgColor, UIColor.black.withAlphaComponent(0.75).cgColor, UIColor.black.cgColor]
+        footerGradient.locations = [0.0, 0.5, 1.0]
+        footerGradientView.layer.insertSublayer(footerGradient, at: 0)
+    }
+    
     private func updateSubviews() {
         
         NSLayoutConstraint.activate([
@@ -67,6 +85,8 @@ class PopularCollectionViewCell: BaseMovieCollectionViewCell {
         
         voteView.layer.cornerRadius = voteView.bounds.width / 2
         voteGradient.frame = voteView.bounds
+        
+        footerGradient.frame = footerGradientView.bounds
     }
     
     private func updateVotes() {
@@ -83,5 +103,10 @@ class PopularCollectionViewCell: BaseMovieCollectionViewCell {
             
             voteLabel.attributedText = voteText
         }
+    }
+    
+    private func updateFooter() {
+        titleLabel.text = movie?.title.uppercased()
+        yearLabel.text = movie?.releaseDate.components(separatedBy: "-").first
     }
 }

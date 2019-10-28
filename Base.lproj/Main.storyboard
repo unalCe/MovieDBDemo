@@ -101,16 +101,49 @@
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AZX-hw-k0k">
                                                                     <rect key="frame" x="0.0" y="0.0" width="147" height="224"/>
                                                                 </imageView>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zdJ-iV-r3Z">
+                                                                    <rect key="frame" x="0.0" y="155.33333333333334" width="147" height="68.666666666666657"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACJ-fn-seB">
+                                                                            <rect key="frame" x="12" y="43" width="123" height="21.666666666666671"/>
+                                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4E-8G-x7S">
+                                                                            <rect key="frame" x="12" y="20" width="123" height="18"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <constraints>
+                                                                        <constraint firstItem="ACJ-fn-seB" firstAttribute="top" secondItem="r4E-8G-x7S" secondAttribute="bottom" constant="5" id="Cuw-5Y-Y9H"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="ACJ-fn-seB" secondAttribute="bottom" constant="4" id="Kn2-gr-Zkf"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="ACJ-fn-seB" secondAttribute="trailing" constant="12" id="RAD-ez-CJG"/>
+                                                                        <constraint firstItem="r4E-8G-x7S" firstAttribute="leading" secondItem="zdJ-iV-r3Z" secondAttribute="leading" constant="12" id="cWk-4i-tee"/>
+                                                                        <constraint firstItem="ACJ-fn-seB" firstAttribute="leading" secondItem="zdJ-iV-r3Z" secondAttribute="leading" constant="12" id="fwZ-RP-CKr"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="r4E-8G-x7S" secondAttribute="trailing" constant="12" id="mNW-4o-lJd"/>
+                                                                        <constraint firstItem="r4E-8G-x7S" firstAttribute="top" secondItem="zdJ-iV-r3Z" secondAttribute="top" constant="20" id="oZf-FZ-BUs"/>
+                                                                    </constraints>
+                                                                </view>
                                                             </subviews>
                                                         </view>
                                                         <constraints>
                                                             <constraint firstAttribute="bottom" secondItem="AZX-hw-k0k" secondAttribute="bottom" id="0At-aT-jN0"/>
                                                             <constraint firstAttribute="trailing" secondItem="AZX-hw-k0k" secondAttribute="trailing" id="8aI-Wi-6F3"/>
                                                             <constraint firstItem="AZX-hw-k0k" firstAttribute="leading" secondItem="aXM-3s-PQj" secondAttribute="leading" id="LSk-V0-vRU"/>
+                                                            <constraint firstAttribute="trailing" secondItem="zdJ-iV-r3Z" secondAttribute="trailing" id="PMz-t8-JDk"/>
+                                                            <constraint firstItem="zdJ-iV-r3Z" firstAttribute="leading" secondItem="aXM-3s-PQj" secondAttribute="leading" id="io3-lO-ROH"/>
                                                             <constraint firstItem="AZX-hw-k0k" firstAttribute="top" secondItem="aXM-3s-PQj" secondAttribute="top" id="lMa-lY-yNS"/>
+                                                            <constraint firstAttribute="bottom" secondItem="zdJ-iV-r3Z" secondAttribute="bottom" id="u9O-PC-1FN"/>
                                                         </constraints>
                                                         <connections>
                                                             <outlet property="backImageView" destination="AZX-hw-k0k" id="74Z-EO-tWT"/>
+                                                            <outlet property="footerGradientView" destination="zdJ-iV-r3Z" id="gKn-9H-rgx"/>
+                                                            <outlet property="titleLabel" destination="ACJ-fn-seB" id="une-pz-JYL"/>
+                                                            <outlet property="yearLabel" destination="r4E-8G-x7S" id="Dqq-l7-S3t"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
