@@ -23,7 +23,7 @@ class MovieDetailViewController: UIViewController {
     }
     
     private func createLabel() {
-        let button = UIButton(frame: CGRect(x: 110, y: 650, width: 100, height: 50))
+        let button = UIButton(frame: CGRect(x: 110, y: 250, width: 100, height: 50))
         button.titleLabel?.text = "Dismiss"
         button.backgroundColor = .red
         button.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
@@ -35,7 +35,7 @@ class MovieDetailViewController: UIViewController {
     }
     
     @objc func dismissView() {
-        dismiss(animated: true, completion: nil)
+        dismissDetail()
     }
     
 }

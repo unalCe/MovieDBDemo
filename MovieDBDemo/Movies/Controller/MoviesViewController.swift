@@ -70,7 +70,9 @@ class MoviesViewController: UIViewController {
             if let strongSelf = self {
                 let vc = MovieDetailViewController()
                 vc.movie = movie
-                strongSelf.show(vc, sender: nil)
+                // strongSelf.show(vc, sender: nil)
+                //strongSelf.present(vc, animated: true, completion: nil)
+                strongSelf.presentDetail(vc)
             }
         }
     }
