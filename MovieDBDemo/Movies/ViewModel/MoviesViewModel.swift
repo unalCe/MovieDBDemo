@@ -28,7 +28,7 @@ class MoviesViewModel {
     }
     
     func getMovies(completion: @escaping () -> Void) {
-        apiClient.getMovies(for: listType) { [weak self] (movies, error) in
+        apiClient.getMovies(for: contentType, with: listType) { [weak self] (movies, error) in
             if error == nil {
                 self?.movies = movies
             }

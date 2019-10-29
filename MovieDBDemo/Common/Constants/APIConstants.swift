@@ -24,18 +24,24 @@ enum APIEndPoints {
     func endPoint() -> String {
         switch self {
         case .nowPlaying:
-            return "movie/now_playing"
+            return "now_playing"
         case .topRated:
-            return "movie/top_rated"
+            return "top_rated"
         case .popular:
-            return "movie/popular"
+            return "popular"
         case .movieDetails(let movie):
-            return "movie/\(movie.movieId)"
+            return "\(movie.movieId)"
         }
     }
     
-    func buildUrl() -> String {
-        // return  "\(AppConstants.API.BaseURL)\(AppConstants.API.BaseAPIVersion)/\(endPoint())?api_key=\(AppConstants.API.TheMovieDBAPIKey)"
-        return "\(MovieDBBaseAPI.BaseURL)\(MovieDBBaseAPI.BaseAPIVersion)\(endPoint())?api_key=\(MovieDBBaseAPI.TheMovieDBAPIKey)"
+    func buildUrl(for content: ContentType) -> String {
+        var conjunction: String
+        switch content {
+        case .Movie:
+            conjunction = "movie/"
+        default:
+            conjunction = "tv/"
+        }
+        return "\(MovieDBBaseAPI.BaseURL)\(MovieDBBaseAPI.BaseAPIVersion)\(conjunction)\(endPoint())?api_key=\(MovieDBBaseAPI.TheMovieDBAPIKey)"
     }
 }

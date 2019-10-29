@@ -18,13 +18,13 @@ class MoviesViewController: UIViewController {
     
     // private var topRatedDataSource: MovieDataSource?
     
-    var topRatedViewModel = MoviesViewModel(contentType: .Movie, listType: .TopRated)
-    var popularViewModel = MoviesViewModel(contentType: .Movie, listType: .Popular)
-    let nowPlayingViewModel = MoviesViewModel(contentType: .Movie, listType: .NowPlaying)
+    private let topRatedViewModel = MoviesViewModel(contentType: .Movie, listType: .TopRated)
+    private let popularViewModel = MoviesViewModel(contentType: .Movie, listType: .Popular)
+    private let nowPlayingViewModel = MoviesViewModel(contentType: .Movie, listType: .NowPlaying)
     
-    var topRatedDataSource: MovieDataSourceDelegate?
-    var popularDataSource: MovieDataSourceDelegate?
-    var nowPlayingDataSource: MovieDataSourceDelegate?
+    private var topRatedDataSource: MovieDataSourceDelegate?
+    private var popularDataSource: MovieDataSourceDelegate?
+    private var nowPlayingDataSource: MovieDataSourceDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,7 @@ class MoviesViewController: UIViewController {
         getMovies(for: nowPlayingCollectionView, with: nowPlayingViewModel)
     }
     
-    func reload(collectionView: UICollectionView, with viewModel: MoviesViewModel) {
+    private func reload(collectionView: UICollectionView, with viewModel: MoviesViewModel) {
         // dataSource = nowPlayingViewModel.getDataSource(didSelectItemHandler: didSelectMovie())
         
         switch viewModel.listType {

@@ -12,14 +12,13 @@ protocol MovieAPIClientProtocol {
     typealias MoviesCompletionHandler = ([Movie], Error?) -> Void
     typealias MovieDetailsCompletionHandler = (MovieDetail?, Error?) -> Void
     
-    func getMovies(for listType: ListType, completion: @escaping MoviesCompletionHandler)
+    func getMovies(for content: ContentType, with listType: ListType, completion: @escaping MoviesCompletionHandler)
     func getDetails(for movie: Movie, completion: @escaping MovieDetailsCompletionHandler)
-    // func getMoviesInCollection(for movieDetails: MovieDetail, completion: @escaping MoviesCompletionHandler)
 }
 
 class MovieAPIClient: MovieAPIClientProtocol {
     
-    func getMovies(for listType: ListType, completion: @escaping MovieAPIClientProtocol.MoviesCompletionHandler) {
+    func getMovies(for content: ContentType, with listType: ListType, completion: @escaping MovieAPIClientProtocol.MoviesCompletionHandler) {
         var endPoint: APIEndPoints
         switch listType {
         case .NowPlaying: endPoint = .nowPlaying
@@ -27,7 +26,7 @@ class MovieAPIClient: MovieAPIClientProtocol {
         case .TopRated: endPoint = .topRated
         }
         
-        guard let url = URL(string: endPoint.buildUrl()) else {
+        guard let url = URL(string: endPoint.buildUrl(for: content)) else {
             completion([], APIError.invalidURL)
             return
         }
@@ -45,9 +44,16 @@ class MovieAPIClient: MovieAPIClientProtocol {
                 return
             }
             
-            if let response = try? JSONDecoder().decode(MoviesResponse.self, from: data) {
-                completion(response.results, nil)
+            if let movieResponse = try? JSONDecoder().decode(MoviesResponse.self, from: data) {
+                completion(movieResponse.results, nil)
                 return
+            } else if let showResponse = try? JSONDecoder().decode(TVShowResponse.self, from: data) {
+                    // Convert tvshows array to movies array.
+                    let movieResults = showResponse.results.map({ (show) -> Movie in
+                        return Movie(movieId: show.showId, title: show.name, overview: show.overview, posterPath: show.posterPath, voteAverage: show.voteAverage, releaseDate: show.releaseDate, backDropPath: show.backDropPath)
+                    })
+                    completion(movieResults, nil)
+                    return
             } else {
                 completion([], APIError.invalidResponse)
             }
@@ -59,9 +65,6 @@ class MovieAPIClient: MovieAPIClientProtocol {
     func getDetails(for movie: Movie, completion: @escaping MovieAPIClientProtocol.MovieDetailsCompletionHandler) {
         print("detay yok şimdilik")
     }
-    
-    
-    
 }
 
 

@@ -13,10 +13,10 @@ enum ContentType {
     case TVShow
 }
 
-enum ListType: String {
-    case TopRated = "topRatedCell"
-    case NowPlaying = "nowPlayingCell"
-    case Popular = "popularCell"
+enum ListType {
+    case TopRated
+    case NowPlaying
+    case Popular
 }
 
 class MovieDataSourceDelegate: NSObject {
@@ -34,6 +34,23 @@ class MovieDataSourceDelegate: NSObject {
         self.listType = listType
         self.didSelectItemHandler = didSelectItemHandler
     }
+    
+    private func getCellIdentifier(for content: ContentType, with listType: ListType) -> String {
+        switch content {
+        case .Movie:
+            switch listType {
+            case .NowPlaying: return "nowPlayingCell"
+            case .Popular: return "popularCell"
+            case .TopRated: return "topRatedCell"
+            }
+        case.TVShow:
+            switch listType {
+            case .Popular: return "tvPopularCell"
+            case .TopRated: return "tvTopCell"
+            default: fatalError("there is no reusable cell in TVShow VC for this.")
+            }
+        }
+    }
 }
 
 extension MovieDataSourceDelegate: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -44,24 +61,7 @@ extension MovieDataSourceDelegate: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-//        switch listType {
-//        case .TopRated:
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: listType.rawValue, for: indexPath) as! TopRatedCollectionViewCell
-//
-//            cell.configure(with: BaseMovieCellViewModel(movie: movies[indexPath.row]), for: listType)
-//            return cell
-//        case .NowPlaying:
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: listType.rawValue, for: indexPath) as! NowPlayingCollectionViewCell
-//
-//            cell.configure(with: BaseMovieCellViewModel(movie: movies[indexPath.row]), for: listType)
-//            return cell
-//        case .Popular:
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: listType.rawValue, for: indexPath) as! PopularCollectionViewCell
-//            cell.movie = movies[indexPath.row]
-//            return cell
-//        }
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: listType.rawValue, for: indexPath) as! BaseMovieCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: getCellIdentifier(for: content, with: listType), for: indexPath) as! BaseMovieCollectionViewCell
         cell.configure(with: BaseMovieCellViewModel(movie: movies[indexPath.row]), for: listType)
         return cell
     }
@@ -75,19 +75,31 @@ extension MovieDataSourceDelegate: UICollectionViewDelegate, UICollectionViewDat
 extension MovieDataSourceDelegate: UICollectionViewDelegateFlowLayout {
     
     private func calculateCellSize(for contentType: ContentType, list: ListType, in collectionView: UICollectionView) -> CGSize {
-        switch listType {
-        case .TopRated:
-            return CGSize(width: (collectionView.bounds.width - CollectionViewProperties.HorizontalInsets) * 0.865, height: collectionView.bounds.height - CollectionViewProperties.VerticalInsets)
-        case .NowPlaying:
-            return CGSize(width: (collectionView.bounds.width - CollectionViewProperties.HorizontalInsets) * 0.42, height: collectionView.bounds.height - CollectionViewProperties.VerticalInsets)
-        case .Popular:
-            let width = (collectionView.bounds.width - (CollectionViewProperties.HorizontalInsets + ((CollectionViewProperties.NumberOfColumnsInGrid - 1) * CollectionViewProperties.HorizontalSpaceBetweenItems))) / CollectionViewProperties.NumberOfColumnsInGrid
-            return CGSize(width: width, height: width * CollectionViewProperties.PosterImageRatio)
+        switch contentType {
+        case .Movie:
+            switch listType {
+            case .TopRated:
+                return CGSize(width: (collectionView.bounds.width - CollectionViewProperties.HorizontalInsets) * 0.865, height: collectionView.bounds.height - CollectionViewProperties.VerticalInsets)
+            case .NowPlaying:
+                return CGSize(width: (collectionView.bounds.width - CollectionViewProperties.HorizontalInsets) * 0.42, height: collectionView.bounds.height - CollectionViewProperties.VerticalInsets)
+            case .Popular:
+                let width = (collectionView.bounds.width - (CollectionViewProperties.HorizontalInsets + ((CollectionViewProperties.NumberOfColumnsInGrid - 1) * CollectionViewProperties.HorizontalSpaceBetweenItems))) / CollectionViewProperties.NumberOfColumnsInGrid
+                return CGSize(width: width, height: width * CollectionViewProperties.PosterImageRatio)
+            }
+        case .TVShow:
+            switch listType {
+            case .TopRated:
+                return CGSize(width: (collectionView.bounds.width - CollectionViewProperties.HorizontalInsets) * 0.42, height: collectionView.bounds.height - CollectionViewProperties.VerticalInsets)
+            default:
+                let width = collectionView.bounds.width - CollectionViewProperties.HorizontalInsets
+                return CGSize(width: width, height: width / CollectionViewProperties.PosterImageRatio)
+            }
         }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return calculateCellSize(for: .Movie, list: listType, in: collectionView)
+        return calculateCellSize(for: content, list: listType, in: collectionView)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
