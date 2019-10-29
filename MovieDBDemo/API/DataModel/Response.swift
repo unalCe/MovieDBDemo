@@ -16,3 +16,6 @@ struct TVShowResponse: Codable {
     var results: [TVShow]
 }
 
+struct CastResponse: Codable {
+    var cast: [Artist]
+}

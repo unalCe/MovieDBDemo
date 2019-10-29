@@ -20,7 +20,7 @@ enum ListType {
 }
 
 class MovieDataSourceDelegate: NSObject {
-    typealias MovieSelectHandler = (Movie) -> ()
+    typealias MovieSelectHandler = (Movie, ContentType) -> ()
     
     var movies: [Movie] = []
     var didSelectItemHandler: MovieSelectHandler?
@@ -47,7 +47,7 @@ class MovieDataSourceDelegate: NSObject {
             switch listType {
             case .Popular: return "tvPopularCell"
             case .TopRated: return "tvTopCell"
-            default: fatalError("there is no reusable cell in TVShow VC for this.")
+            default: fatalError("there is no reusable cell in TVShowVC for this case.")
             }
         }
     }
@@ -68,7 +68,7 @@ extension MovieDataSourceDelegate: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let movie = movies[indexPath.row]
-        didSelectItemHandler?(movie)
+        didSelectItemHandler?(movie, content)
     }
 }
 
@@ -95,7 +95,6 @@ extension MovieDataSourceDelegate: UICollectionViewDelegateFlowLayout {
                 return CGSize(width: width, height: width / CollectionViewProperties.PosterImageRatio)
             }
         }
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

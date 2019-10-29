@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieDBDemo/API/Engine/MovieAPIClient.swift"
-            timestampString = "594057634.368299"
+            timestampString = "594069305.709159"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieDBDemo/API/Engine/MovieAPIClient.swift"
-            timestampString = "594057634.36839"
+            timestampString = "594069305.709286"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieDBDemo/API/Engine/MovieAPIClient.swift"
-            timestampString = "594057634.368452"
+            timestampString = "594069305.7093869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieDBDemo/API/Engine/MovieAPIClient.swift"
-            timestampString = "594057634.3685271"
+            timestampString = "594069305.709469"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieDBDemo/API/Engine/MovieAPIClient.swift"
-            timestampString = "594057634.368601"
+            timestampString = "594069305.709522"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
@@ -410,7 +410,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieDBDemo/API/Engine/MovieAPIClient.swift"
-            timestampString = "594057634.3689491"
+            timestampString = "594069305.7100379"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
@@ -426,13 +426,77 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieDBDemo/API/Engine/MovieAPIClient.swift"
-            timestampString = "594057634.369032"
+            timestampString = "594069305.7101099"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
             endingLineNumber = "31"
             landmarkName = "getMovies(for:with:completion:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieDBDemo/Module/Detail/MovieDetailViewController.swift"
+            timestampString = "594069305.710198"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "setViewModel(viewModel:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieDBDemo/Module/Detail/MovieDetailViewController.swift"
+            timestampString = "594069305.710827"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "getDetails()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieDBDemo.MovieDetailViewController.(getDetails in _9876F5AD820A49B8623455777908FE5B)() -&gt; ()"
+                  moduleName = "MovieDBDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/unalcelik/Desktop/MovieDBDemo/MovieDBDemo/Module/Detail/MovieDetailViewController.swift"
+                  timestampString = "594068474.334079"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "43">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (MovieDBDemo.MovieDetail) -&gt; () in MovieDBDemo.MovieDetailViewController.(getDetails in _9876F5AD820A49B8623455777908FE5B)() -&gt; ()"
+                  moduleName = "MovieDBDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/unalcelik/Desktop/MovieDBDemo/MovieDBDemo/Module/Detail/MovieDetailViewController.swift"
+                  timestampString = "594068474.336242"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "147">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

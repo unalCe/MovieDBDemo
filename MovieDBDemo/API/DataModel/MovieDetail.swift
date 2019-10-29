@@ -8,13 +8,21 @@
 
 import Foundation
 
-struct MovieDetail {
-    var movieId: Int
+struct MovieDetail: Codable {
+    var id: Int
     var title: String
     var overview: String
     var posterPath: String
     
-    var genres: [[String: Any]]
+    var genres: [Genre]
     var voteAverage: Double
-    var cast: [[String: Any]]
+    
+    private enum CodingKeys: String, CodingKey {
+        case id, title, overview, posterPath = "poster_path", genres, voteAverage = "vote_average"
+    }
+}
+
+struct Genre: Codable {
+    var id: Int
+    var name: String
 }

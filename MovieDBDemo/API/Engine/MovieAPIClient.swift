@@ -13,7 +13,7 @@ protocol MovieAPIClientProtocol {
     typealias MovieDetailsCompletionHandler = (MovieDetail?, Error?) -> Void
     
     func getMovies(for content: ContentType, with listType: ListType, completion: @escaping MoviesCompletionHandler)
-    func getDetails(for movie: Movie, completion: @escaping MovieDetailsCompletionHandler)
+    func getDetails(for movie: Movie, with type: ContentType, completion: @escaping MovieDetailsCompletionHandler)
 }
 
 class MovieAPIClient: MovieAPIClientProtocol {
@@ -62,8 +62,36 @@ class MovieAPIClient: MovieAPIClientProtocol {
         dataTask.resume()
     }
     
-    func getDetails(for movie: Movie, completion: @escaping MovieAPIClientProtocol.MovieDetailsCompletionHandler) {
-        print("detay yok şimdilik")
+    func getDetails(for movie: Movie, with type: ContentType, completion: @escaping MovieAPIClientProtocol.MovieDetailsCompletionHandler) {
+        
+        guard let url = URL(string: APIEndPoints.movieDetails(movie: movie).buildUrl(for: type)) else {
+            completion(nil, APIError.invalidURL)
+            return
+        }
+        
+        let request = URLRequest(url: url)
+        
+        let dataTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                completion(nil, error)
+                return
+            }
+            
+            guard let data = data else {
+                completion(nil, APIError.invalidData)
+                return
+            }
+            
+            if let movieResponse = try? JSONDecoder().decode(MovieDetail.self, from: data) {
+                completion(movieResponse, nil)
+                return
+            } else {
+                completion(nil, APIError.invalidResponse)
+            }
+        }
+        
+        dataTask.resume()
+        
     }
 }
 

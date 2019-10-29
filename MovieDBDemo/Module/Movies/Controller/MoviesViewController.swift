@@ -66,13 +66,14 @@ class MoviesViewController: UIViewController {
     }
     
     private func didSelectMovie() -> MovieDataSourceDelegate.MovieSelectHandler {
-        return { [weak self] (movie) in
+        return { [weak self] (movie, content) in
             if let strongSelf = self {
-                let vc = MovieDetailViewController()
-                vc.movie = movie
-                // strongSelf.show(vc, sender: nil)
-                //strongSelf.present(vc, animated: true, completion: nil)
-                strongSelf.presentDetail(vc)
+                let destinationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "detailViewController") as! MovieDetailViewController
+                
+                let detailViewModel = DetailViewModel(movie: movie, contentType: content)
+                destinationVC.setViewModel(viewModel: detailViewModel)
+                
+                strongSelf.navigationController?.pushViewController(destinationVC, animated: true)
             }
         }
     }
