@@ -62,7 +62,7 @@ extension MovieDataSourceDelegate: UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: getCellIdentifier(for: content, with: listType), for: indexPath) as! BaseMovieCollectionViewCell
-        cell.configure(with: BaseMovieCellViewModel(movie: movies[indexPath.row]), for: listType)
+        cell.configure(with: BaseMovieCellViewModel(movie: movies[indexPath.row]), for: content, with: listType)
         return cell
     }
     
@@ -79,9 +79,9 @@ extension MovieDataSourceDelegate: UICollectionViewDelegateFlowLayout {
         case .Movie:
             switch listType {
             case .TopRated:
-                return CGSize(width: (collectionView.bounds.width - CollectionViewProperties.HorizontalInsets) * 0.865, height: collectionView.bounds.height - CollectionViewProperties.VerticalInsets)
+                return CGSize(width: (collectionView.bounds.width - CollectionViewProperties.HorizontalInsets) * 0.95, height: collectionView.bounds.height - CollectionViewProperties.VerticalInsets)
             case .NowPlaying:
-                return CGSize(width: (collectionView.bounds.width - CollectionViewProperties.HorizontalInsets) * 0.42, height: collectionView.bounds.height - CollectionViewProperties.VerticalInsets)
+                return CGSize(width: (collectionView.bounds.width - CollectionViewProperties.HorizontalInsets) * 0.46, height: collectionView.bounds.height - CollectionViewProperties.VerticalInsets)
             case .Popular:
                 let width = (collectionView.bounds.width - (CollectionViewProperties.HorizontalInsets + ((CollectionViewProperties.NumberOfColumnsInGrid - 1) * CollectionViewProperties.HorizontalSpaceBetweenItems))) / CollectionViewProperties.NumberOfColumnsInGrid
                 return CGSize(width: width, height: width * CollectionViewProperties.PosterImageRatio)
@@ -89,7 +89,7 @@ extension MovieDataSourceDelegate: UICollectionViewDelegateFlowLayout {
         case .TVShow:
             switch listType {
             case .TopRated:
-                return CGSize(width: (collectionView.bounds.width - CollectionViewProperties.HorizontalInsets) * 0.42, height: collectionView.bounds.height - CollectionViewProperties.VerticalInsets)
+                return CGSize(width: (collectionView.bounds.width - CollectionViewProperties.HorizontalInsets) * 0.46, height: collectionView.bounds.height - CollectionViewProperties.VerticalInsets)
             default:
                 let width = collectionView.bounds.width - CollectionViewProperties.HorizontalInsets
                 return CGSize(width: width, height: width / CollectionViewProperties.PosterImageRatio)

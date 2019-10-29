@@ -6,87 +6,119 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieDBDemo/API/Engine/MovieAPIClient.swift"
-            timestampString = "594056196.208738"
+            timestampString = "594057634.368299"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
             endingLineNumber = "39"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "getMovies(for:with:completion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieDBDemo/API/Engine/MovieAPIClient.swift"
-            timestampString = "594056196.208849"
+            timestampString = "594057634.36839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
             endingLineNumber = "44"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "getMovies(for:with:completion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieDBDemo/API/Engine/MovieAPIClient.swift"
-            timestampString = "594056196.208923"
+            timestampString = "594057634.368452"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
             endingLineNumber = "49"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "getMovies(for:with:completion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieDBDemo/API/Engine/MovieAPIClient.swift"
-            timestampString = "594056196.208992"
+            timestampString = "594057634.3685271"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
             endingLineNumber = "59"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "getMovies(for:with:completion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieDBDemo/API/Engine/MovieAPIClient.swift"
-            timestampString = "594056196.209059"
+            timestampString = "594057634.368601"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
             endingLineNumber = "35"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "getMovies(for:with:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieDBDemo.MovieAPIClient.getMovies(for: MovieDBDemo.ContentType, with: MovieDBDemo.ListType, completion: (Swift.Array&lt;MovieDBDemo.Movie&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MovieDBDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/unalcelik/Desktop/MovieDBDemo/MovieDBDemo/API/Engine/MovieAPIClient.swift"
+                  timestampString = "594057565.860567"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "1194">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MovieDBDemo.MovieAPIClient.getMovies(for: MovieDBDemo.ContentType, with: MovieDBDemo.ListType, completion: (Swift.Array&lt;MovieDBDemo.Movie&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MovieDBDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/unalcelik/Desktop/MovieDBDemo/MovieDBDemo/API/Engine/MovieAPIClient.swift"
+                  timestampString = "594057565.862956"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "310">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieDBDemo/Common/DataSource/MovieDataSource.swift"
@@ -198,7 +230,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieDBDemo/Movies/View/PopularCollectionViewCell.swift"
@@ -214,7 +246,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieDBDemo/Movies/View/PopularCollectionViewCell.swift"
@@ -230,7 +262,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieDBDemo/Movies/View/PopularCollectionViewCell.swift"
@@ -241,104 +273,12 @@
             endingLineNumber = "21"
             landmarkName = "PopularCollectionViewCell"
             landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MovieDBDemo.PopularCollectionViewCell.footerGradientView.getter : Swift.Optional&lt;__C.UIView&gt;"
-                  moduleName = "MovieDBDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/unalcelik/Desktop/MovieDBDemo/MovieDBDemo/Movies/View/PopularCollectionViewCell.swift"
-                  timestampString = "594056196.495557"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "86">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MovieDBDemo.PopularCollectionViewCell.footerGradientView.setter : Swift.Optional&lt;__C.UIView&gt;"
-                  moduleName = "MovieDBDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/unalcelik/Desktop/MovieDBDemo/MovieDBDemo/Movies/View/PopularCollectionViewCell.swift"
-                  timestampString = "594056196.498292"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "106">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MovieDBDemo.PopularCollectionViewCell.footerGradientView.modify : Swift.Optional&lt;__C.UIView&gt;"
-                  moduleName = "MovieDBDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/unalcelik/Desktop/MovieDBDemo/MovieDBDemo/Movies/View/PopularCollectionViewCell.swift"
-                  timestampString = "594056196.500729"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "69">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MovieDBDemo.PopularCollectionViewCell.footerGradientView.modify : Swift.Optional&lt;__C.UIView&gt; with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "MovieDBDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/unalcelik/Desktop/MovieDBDemo/MovieDBDemo/Movies/View/PopularCollectionViewCell.swift"
-                  timestampString = "594056196.503817"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "72">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MovieDBDemo.PopularCollectionViewCell.init(frame: __C.CGRect) -&gt; MovieDBDemo.PopularCollectionViewCell"
-                  moduleName = "MovieDBDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/unalcelik/Desktop/MovieDBDemo/MovieDBDemo/Movies/View/PopularCollectionViewCell.swift"
-                  timestampString = "594056196.509377"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "509">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MovieDBDemo.PopularCollectionViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;MovieDBDemo.PopularCollectionViewCell&gt;"
-                  moduleName = "MovieDBDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/unalcelik/Desktop/MovieDBDemo/MovieDBDemo/Movies/View/PopularCollectionViewCell.swift"
-                  timestampString = "594056196.5127929"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "485">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieDBDemo/Movies/View/PopularCollectionViewCell.swift"
@@ -354,7 +294,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieDBDemo/Movies/View/TopRatedCollectionViewCell.swift"
@@ -365,104 +305,12 @@
             endingLineNumber = "13"
             landmarkName = "TopRatedCollectionViewCell"
             landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MovieDBDemo.TopRatedCollectionViewCell.backImageView.getter : Swift.Optional&lt;__C.UIImageView&gt;"
-                  moduleName = "MovieDBDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/unalcelik/Desktop/MovieDBDemo/MovieDBDemo/Movies/View/TopRatedCollectionViewCell.swift"
-                  timestampString = "594056196.528903"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "13"
-                  endingLineNumber = "13"
-                  offsetFromSymbolStart = "86">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MovieDBDemo.TopRatedCollectionViewCell.backImageView.setter : Swift.Optional&lt;__C.UIImageView&gt;"
-                  moduleName = "MovieDBDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/unalcelik/Desktop/MovieDBDemo/MovieDBDemo/Movies/View/TopRatedCollectionViewCell.swift"
-                  timestampString = "594056196.530984"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "13"
-                  endingLineNumber = "13"
-                  offsetFromSymbolStart = "106">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MovieDBDemo.TopRatedCollectionViewCell.backImageView.modify : Swift.Optional&lt;__C.UIImageView&gt;"
-                  moduleName = "MovieDBDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/unalcelik/Desktop/MovieDBDemo/MovieDBDemo/Movies/View/TopRatedCollectionViewCell.swift"
-                  timestampString = "594056196.53336"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "69">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MovieDBDemo.TopRatedCollectionViewCell.backImageView.modify : Swift.Optional&lt;__C.UIImageView&gt; with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "MovieDBDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/unalcelik/Desktop/MovieDBDemo/MovieDBDemo/Movies/View/TopRatedCollectionViewCell.swift"
-                  timestampString = "594056196.535668"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "13"
-                  endingLineNumber = "13"
-                  offsetFromSymbolStart = "72">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MovieDBDemo.TopRatedCollectionViewCell.init(frame: __C.CGRect) -&gt; MovieDBDemo.TopRatedCollectionViewCell"
-                  moduleName = "MovieDBDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/unalcelik/Desktop/MovieDBDemo/MovieDBDemo/Movies/View/TopRatedCollectionViewCell.swift"
-                  timestampString = "594056196.537712"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "13"
-                  endingLineNumber = "13"
-                  offsetFromSymbolStart = "56">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MovieDBDemo.TopRatedCollectionViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;MovieDBDemo.TopRatedCollectionViewCell&gt;"
-                  moduleName = "MovieDBDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/unalcelik/Desktop/MovieDBDemo/MovieDBDemo/Movies/View/TopRatedCollectionViewCell.swift"
-                  timestampString = "594056196.539834"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "13"
-                  endingLineNumber = "13"
-                  offsetFromSymbolStart = "107">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieDBDemo/Common/DataSource/MovieDataSourceDelegate.swift"
@@ -478,7 +326,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieDBDemo/Common/DataSource/MovieDataSourceDelegate.swift"
@@ -494,7 +342,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieDBDemo/Common/DataSource/MovieDataSourceDelegate.swift"
@@ -510,7 +358,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieDBDemo/Common/DataSource/MovieDataSourceDelegate.swift"
@@ -526,7 +374,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieDBDemo/Common/DataSource/MovieDataSourceDelegate.swift"
@@ -542,7 +390,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieDBDemo/Common/DataSource/MovieDataSourceDelegate.swift"
@@ -558,33 +406,33 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieDBDemo/API/Engine/MovieAPIClient.swift"
-            timestampString = "594056196.210209"
+            timestampString = "594057634.3689491"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
             endingLineNumber = "30"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "getMovies(for:with:completion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieDBDemo/API/Engine/MovieAPIClient.swift"
-            timestampString = "594056196.210274"
+            timestampString = "594057634.369032"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
             endingLineNumber = "31"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "getMovies(for:with:completion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
