@@ -10,15 +10,12 @@ import UIKit
 
 class BaseMovieCellViewModel {
     
-    private var apiClient: MovieAPIClientProtocol
     private var currentMovie: Movie
     
     init(movie: Movie) {
-        self.apiClient = MovieAPIClient()
         self.currentMovie = movie
     }
     
-    /// Getting images repeadetly causes a little lag on simulator. Try Kingfisher which supports caching.
     func getImage(with url: String, completion: @escaping (UIImage) -> Void ) {
         guard let imageURL = URL(string: url) else { return }
         

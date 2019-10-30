@@ -12,3 +12,14 @@ struct MoviesResponse: Codable {
     var results: [Movie]
 }
 
+struct TVShowResponse: Codable {
+    var results: [TVShow]
+}
+
+struct CastResponse: Codable {
+    var cast: [Artist]
+}
+
+struct VideoResponse: Codable {
+    var results: [Video]
+}

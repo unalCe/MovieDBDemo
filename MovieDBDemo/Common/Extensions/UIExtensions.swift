@@ -24,6 +24,23 @@ extension UIView {
     }
 }
 
+extension UIImageView {
+    
+    func setImage(with url: String) {
+        guard let imageURL = URL(string: url) else { return }
+        
+        let dataTask = URLSession.shared.dataTask(with: imageURL) { data, response, error in
+            guard let data = data, error == nil,
+                let image = UIImage(data: data) else { return }
+            
+            DispatchQueue.main.async() {
+                self.image = image
+            }
+        }
+        dataTask.resume()
+    }
+}
+
 extension UIViewController {
     
     func presentDetail(_ viewControllerToPresent: UIViewController) {

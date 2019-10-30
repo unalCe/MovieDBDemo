@@ -18,13 +18,13 @@ class MoviesViewController: UIViewController {
     
     // private var topRatedDataSource: MovieDataSource?
     
-    var topRatedViewModel = MoviesViewModel(contentType: .Movie, listType: .TopRated)
-    var popularViewModel = MoviesViewModel(contentType: .Movie, listType: .Popular)
-    let nowPlayingViewModel = MoviesViewModel(contentType: .Movie, listType: .NowPlaying)
+    private let topRatedViewModel = MoviesViewModel(contentType: .Movie, listType: .TopRated)
+    private let popularViewModel = MoviesViewModel(contentType: .Movie, listType: .Popular)
+    private let nowPlayingViewModel = MoviesViewModel(contentType: .Movie, listType: .NowPlaying)
     
-    var topRatedDataSource: MovieDataSourceDelegate?
-    var popularDataSource: MovieDataSourceDelegate?
-    var nowPlayingDataSource: MovieDataSourceDelegate?
+    private var topRatedDataSource: MovieDataSourceDelegate?
+    private var popularDataSource: MovieDataSourceDelegate?
+    private var nowPlayingDataSource: MovieDataSourceDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,7 @@ class MoviesViewController: UIViewController {
         getMovies(for: nowPlayingCollectionView, with: nowPlayingViewModel)
     }
     
-    func reload(collectionView: UICollectionView, with viewModel: MoviesViewModel) {
+    private func reload(collectionView: UICollectionView, with viewModel: MoviesViewModel) {
         // dataSource = nowPlayingViewModel.getDataSource(didSelectItemHandler: didSelectMovie())
         
         switch viewModel.listType {
@@ -66,13 +66,14 @@ class MoviesViewController: UIViewController {
     }
     
     private func didSelectMovie() -> MovieDataSourceDelegate.MovieSelectHandler {
-        return { [weak self] (movie) in
+        return { [weak self] (movie, content) in
             if let strongSelf = self {
-                let vc = MovieDetailViewController()
-                vc.movie = movie
-                // strongSelf.show(vc, sender: nil)
-                //strongSelf.present(vc, animated: true, completion: nil)
-                strongSelf.presentDetail(vc)
+                let destinationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "detailViewController") as! MovieDetailViewController
+                
+                let detailViewModel = DetailViewModel(movie: movie, contentType: content)
+                destinationVC.setViewModel(viewModel: detailViewModel)
+                
+                strongSelf.navigationController?.pushViewController(destinationVC, animated: true)
             }
         }
     }
