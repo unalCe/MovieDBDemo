@@ -721,6 +721,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="3tX-69-1gG" kind="relationship" relationship="viewControllers" id="FTI-1v-g2E"/>
@@ -732,7 +734,7 @@
             </objects>
             <point key="canvasLocation" x="1251" y="-191"/>
         </scene>
-        <!--Item-->
+        <!--PROFILE-->
         <scene sceneID="s8a-Wp-wt4">
             <objects>
                 <viewController storyboardIdentifier="ProfileViewController" id="EmE-VC-qMP" sceneMemberID="viewController">
@@ -742,18 +744,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Lxf-Dl-NZ0"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="P90-yv-0hw"/>
+                    <tabBarItem key="tabBarItem" title="PROFILE" image="tab-profile" selectedImage="tab-profile-selected" id="P90-yv-0hw"/>
                     <navigationItem key="navigationItem" id="Xw3-Q6-qR7"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LZM-Ta-5MZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2290" y="531"/>
         </scene>
-        <!--Item-->
+        <!--MOVIES-->
         <scene sceneID="7nX-iV-IBV">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3tX-69-1gG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="uc5-lw-6Hg"/>
+                    <tabBarItem key="tabBarItem" title="MOVIES" image="tab-movies" selectedImage="tab-movies-selected" id="uc5-lw-6Hg"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="QYG-aH-2rw">
                         <rect key="frame" x="0.0" y="44" width="375" height="96"/>
@@ -769,11 +771,11 @@
             </objects>
             <point key="canvasLocation" x="191" y="365"/>
         </scene>
-        <!--Item-->
+        <!--TV-->
         <scene sceneID="KUH-yz-N8X">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wy9-gK-zBT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="dDn-lc-ONR"/>
+                    <tabBarItem key="tabBarItem" title="TV" image="tab-tv" selectedImage="tab-tv-selected" id="dDn-lc-ONR"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="eyi-Fz-eNg">
                         <rect key="frame" x="0.0" y="44" width="375" height="96"/>
@@ -789,4 +791,12 @@
             <point key="canvasLocation" x="1250" y="531"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tab-movies" width="27" height="26"/>
+        <image name="tab-movies-selected" width="25" height="24"/>
+        <image name="tab-profile" width="26" height="26"/>
+        <image name="tab-profile-selected" width="24" height="24"/>
+        <image name="tab-tv" width="26" height="23"/>
+        <image name="tab-tv-selected" width="24" height="22"/>
+    </resources>
 </document>
