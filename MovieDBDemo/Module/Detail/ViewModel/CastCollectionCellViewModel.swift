@@ -1,23 +1,25 @@
 //
-//  BaseMovieCellViewModel.swift
+//  CastCollectionCellViewModel.swift
 //  MovieDBDemo
 //
-//  Created by Unal Celik on 28.10.2019.
+//  Created by Unal Celik on 30.10.2019.
 //  Copyright © 2019 unalCelik. All rights reserved.
 //
 
 import UIKit
 
-class BaseMovieCellViewModel {
+class CastCollectionCellViewModel {
     
-    private var currentMovie: Movie
+    private(set) var artist: Artist
     
-    init(movie: Movie) {
-        self.currentMovie = movie
+    init(artist: Artist) {
+        self.artist = artist
     }
     
-    func getImage(with url: String, completion: @escaping (UIImage) -> Void ) {
-        guard let imageURL = URL(string: url) else { return }
+    func getArtistImage(completion: @escaping (UIImage) -> Void ) {
+        guard let imagePath = artist.profilePath else { return }
+        
+        guard let imageURL = URL(string: "\(MovieDBBaseAPI.BaseImagePath)\(imagePath)") else { return }
         
         let dataTask = URLSession.shared.dataTask(with: imageURL) { data, response, error in
             guard let data = data, error == nil,
@@ -28,9 +30,5 @@ class BaseMovieCellViewModel {
             }
         }
         dataTask.resume()
-    }
-    
-    func getMovie() -> Movie {
-        return currentMovie
     }
 }

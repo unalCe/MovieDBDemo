@@ -19,3 +19,7 @@ struct TVShowResponse: Codable {
 struct CastResponse: Codable {
     var cast: [Artist]
 }
+
+struct VideoResponse: Codable {
+    var results: [Video]
+}

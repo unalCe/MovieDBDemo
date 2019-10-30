@@ -20,6 +20,8 @@ enum APIEndPoints {
     case topRated
     case popular
     case movieDetails(movie: Movie)
+    case movieVideos(movie: Movie)
+    case movieCredits(movie: Movie)
     
     func endPoint() -> String {
         switch self {
@@ -31,6 +33,10 @@ enum APIEndPoints {
             return "popular"
         case .movieDetails(let movie):
             return "\(movie.movieId)"
+        case .movieVideos(let movie):
+            return "\(movie.movieId)/videos"
+        case .movieCredits(let movie):
+            return "\(movie.movieId)/credits"
         }
     }
     
